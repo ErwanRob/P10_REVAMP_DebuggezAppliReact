@@ -14,6 +14,13 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
+  /* Reworked this entire function, now check for a type
+  if type is null, give the data straight
+  if not null then proceed :
+   - to filter the data by type
+   - to sort the data by date Desc
+   - to filter by index to display the 
+   events on each page with a max of 9 items PER Page */
   const filteredEvents = (
     (!type ? data?.events : data?.events.filter((event) => event.type === type)) || []
   ).sort((evtA, evtB) => (new Date(evtA.date) < new Date(evtB.date) ? 1 : -1)

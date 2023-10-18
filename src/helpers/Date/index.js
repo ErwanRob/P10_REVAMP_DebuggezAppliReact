@@ -13,4 +13,6 @@ export const MONTHS = {
   12: "décembre",
 };
 
+/* BUGSORT added +1 at the end to not start 
+at 0 and be 'out of bound' in this scenario */
 export const getMonth = (date) => MONTHS[date.getMonth() + 1];

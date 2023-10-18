@@ -20,7 +20,7 @@ const Page = () => {
 
   const sortedEvents = sortEventsByDateDesc(data?.events || [])
 
-  const lastEventinDate = sortedEvents?.[0]
+  const lastEventInDate = sortedEvents?.[0]
 
   return <>
     <header>
@@ -31,6 +31,7 @@ const Page = () => {
         <Slider />
       </section>
       <section className="ServicesContainer">
+        {/* BUGSORT Added id for Anchor point */}
         <h2 className="Title" id="nos-services">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -64,6 +65,7 @@ const Page = () => {
         <EventList />
       </section>
       <section className="PeoplesContainer">
+        {/* BUGSORT Added id for Anchor point */}
         <h2 className="Title" id="notre-equipe">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -99,6 +101,7 @@ const Page = () => {
           />
         </div>
       </section>
+      {/* BUGSORT Added id for Anchor point */}
       <div className="FormContainer" id="contact">
         <h2 className="Title">Contact</h2>
         <Modal
@@ -123,11 +126,13 @@ const Page = () => {
     </main>
     <footer className="row">
       <div className="col presta">
+        {/* Changed this part to match the changes at the top of this page
+        Basically changed the variable last to "lastEventInDate" */}
         <h3>Notre derniére prestation</h3>
         <EventCard
-          imageSrc={lastEventinDate?.cover}
-          title={lastEventinDate?.title}
-          date={new Date(lastEventinDate?.date)}
+          imageSrc={lastEventInDate?.cover}
+          title={lastEventInDate?.title}
+          date={new Date(lastEventInDate?.date)}
           small
           label="boom"
         />

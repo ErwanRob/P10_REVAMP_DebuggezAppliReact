@@ -30,7 +30,10 @@ const EventCard = ({
 
 
 
-// BUGSORT
+// BUGSORT Removed isRequired and attributed a default value
+// This way we handle the undefined status of the elements
+// by ignoring them since the structure is not well thought,
+// and element WILL be undefined at start anyways.
 EventCard.propTypes = {
   /* imageSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

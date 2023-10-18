@@ -11,6 +11,10 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
+
+  // BUGSORT added a null Check for byDateDesc
+  // Added a clearTimeout
+  // Added -1 after "byDateDesc.Length" for the slide to not go 'out of bound'
   const nextCard = () => {
     if (byDateDesc) {
       time = setTimeout(
@@ -43,6 +47,14 @@ const Slider = () => {
         </div>
 
       ))}
+
+      {/* BUGSORT 
+      - Uncapsuled this entire part wich was in the
+      previous map() to make it detached from each slide element 
+      and not re-render for no reason on every single slide 
+      - Also added onChange() to respect the convention 
+      - Could modify this to onClick if we wanted 
+      to switch slide with the radio buttons */}
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
           {byDateDesc?.map((event, radioIdx) => (

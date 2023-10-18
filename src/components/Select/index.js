@@ -20,6 +20,8 @@ const Select = ({
     // onChange();
     // setValue(newValue);
     // setCollapsed(newValue);
+    // also added a condition to help the "all" or
+    // "default" type to allow closing the select
     onChange(newValue);
     setValue(newValue);
     if (!newValue) {
