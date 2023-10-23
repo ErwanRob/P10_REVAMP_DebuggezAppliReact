@@ -17,7 +17,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
-        // BUGSORT added onSucess() function call here to make sure 
+        // BUGSORT added onSucess() function call here to make sure
         // the function is called when we get an answer from the API
         onSuccess();
       } catch (err) {

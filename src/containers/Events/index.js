@@ -14,7 +14,7 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  /* Reworked this entire function, now check for a type
+  /* BUGSORT Reworked this entire function, now check for a type
   if type is null, give the data straight
   if not null then proceed :
    - to filter the data by type
